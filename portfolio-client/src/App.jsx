@@ -1,13 +1,24 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Skills from "./pages/Skills";
+import Journey from "./pages/Journey";
+import Contact from "./pages/Contact";
+
 function App() {
   return (
     <div>
-      <h1>My Portfolio</h1>
-      <p>Welcome to my developer journey.</p>
-      <div className="h-screen flex items-center justify-center bg-slate-900">
-        <h1 className="text-4xl font-bold text-white">
-          Tailwind CSS v4 is working 🚀
-        </h1>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/journey" element={<Journey />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

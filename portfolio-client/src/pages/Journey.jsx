@@ -1,7 +1,9 @@
+import JourneyTimeline from "../components/JourneyTimeline";
+
 function Journey() {
   return (
-    <div>
-      <h1 className="text-4xl font-bold text-amber-700">Journey</h1>
+    <div className="bg-slate-950 min-h-screen text-white">
+      <JourneyTimeline />
     </div>
   );
 }

@@ -10,9 +10,9 @@ function Hero() {
 
         <div>
           <motion.h1
-            initial={{ opacity: 0, y: -40 }}
+            initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className="text-4xl md:text-6xl font-bold"
           >
             Hello, I'm Kanimozhi
@@ -21,7 +21,7 @@ function Hero() {
           <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
             className="text-2xl text-sky-400 mt-4"
           >
             Full Stack Developer
@@ -30,7 +30,7 @@ function Hero() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
+            transition={{ delay: 2, duration: 1, ease: "easeOut" }}
             className="mt-6 max-w-xl text-lg text-gray-300 leading-relaxed"
           >
             I began my professional journey as an educator where I developed
@@ -42,7 +42,7 @@ function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
+            transition={{ delay: 3, duration: 0.8, ease: "easeOut" }}
             className="mt-8 flex flex-wrap gap-4"
           >
             <Link

@@ -1,7 +1,9 @@
+import ProjectsSection from "../components/ProjectsSection";
+
 function Projects() {
   return (
     <div>
-      <h1 className="text-4xl font-bold text-amber-700">Projects</h1>
+      <ProjectsSection />
     </div>
   );
 }

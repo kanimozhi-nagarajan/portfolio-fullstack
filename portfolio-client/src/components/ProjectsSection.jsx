@@ -1,0 +1,79 @@
+import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
+import { projectsData } from "../constants/projectsData";
+
+function ProjectsSection() {
+  return (
+    <section className="bg-slate-950 text-white py-20">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-4xl font-bold text-center mb-16">Projects</h2>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {projectsData.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-slate-900 rounded-xl overflow-hidden border border-sky-500
+transition-all duration-300 transform hover:-translate-y-2 hover:scale-105
+hover:shadow-[0_0_30px_rgba(56,189,248,0.6)]"
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition duration-500 hover:scale-110"
+                />
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-sky-400">
+                  {project.title}
+                </h3>
+
+                <p className="text-gray-300 mt-2 text-sm">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="text-xs bg-sky-500/20 text-sky-400 px-2 py-1 rounded"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex gap-4 mt-6">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    className="flex items-center gap-2 text-sm bg-sky-500 px-4 py-2 rounded hover:bg-sky-600 transition"
+                  >
+                    <FaGithub />
+                    GitHub
+                  </a>
+
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    className="flex items-center gap-2 text-sm border border-sky-400 px-4 py-2 rounded hover:bg-sky-500 transition"
+                  >
+                    <FiExternalLink />
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default ProjectsSection;

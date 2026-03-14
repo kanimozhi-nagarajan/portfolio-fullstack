@@ -1,7 +1,10 @@
+import ContactForm from "../components/ContactForm";
+
 function Contact() {
   return (
     <div>
-      <h1 className="text-4xl font-bold text-amber-700">Contact</h1>
+      {" "}
+      <ContactForm />{" "}
     </div>
   );
 }

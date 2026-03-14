@@ -30,15 +30,15 @@ function JourneyTimeline() {
               {/* Card */}
 
               <div
-                className="w-5/12 bg-slate-900 p-6 rounded-xl border border-sky-500 
+                className="w-full md:w-5/12 bg-slate-900 p-6 rounded-xl border border-sky-500 
 shadow-lg transition-all duration-300 transform 
-hover:scale-130 hover:-translate-y-2
+ md:hover:scale-110 hover:-translate-y-2
 hover:shadow-[0_0_30px_rgba(56,189,248,0.6)] cursor-pointer"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">{item.icon}</span>
 
-                  <h3 className="text-2xl font-semibold text-sky-400">
+                  <h3 className="text-xl md:text-2xl break-words font-semibold text-sky-400">
                     {item.title}
                   </h3>
                 </div>

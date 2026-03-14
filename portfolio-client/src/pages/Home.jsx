@@ -2,7 +2,7 @@ import Hero from "../components/Hero";
 
 function Home() {
   return (
-    <div>
+    <div className="bg-slate-950 min-h-screen">
       <Hero />
     </div>
   );

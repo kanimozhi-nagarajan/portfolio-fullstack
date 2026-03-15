@@ -1,16 +1,24 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
-import { projectsData } from "../constants/projectsData";
 
 function ProjectsSection() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/projects")
+      .then((res) => res.json())
+      .then((data) => setProjects(data));
+  }, []);
+
   return (
     <section className="bg-slate-950 text-white py-20">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-16">Projects</h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projectsData.map((project, index) => (
+          {projects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 60 }}

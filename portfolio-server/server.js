@@ -1,7 +1,11 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import pool from "./config/db.js";
+import pool from "./config/neonSql.js";
+import connectMongo from "./config/mongo.js";
+import Project from "./models/Project.js";
+
+connectMongo();
 
 dotenv.config();
 
@@ -28,6 +32,19 @@ app.post("/api/contact", async (req, res) => {
     console.error(error);
     res.status(500).json({ error: "Server error" });
   }
+});
+
+app.get("/api/projects", async (req, res) => {
+  const projects = await Project.find();
+  res.json(projects);
+});
+
+app.post("/api/projects", async (req, res) => {
+  const project = new Project(req.body);
+
+  await project.save();
+
+  res.json(project);
 });
 
 app.listen(5000, () => {

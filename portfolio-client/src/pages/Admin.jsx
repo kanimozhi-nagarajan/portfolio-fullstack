@@ -4,17 +4,6 @@ import { GoogleLogin } from "@react-oauth/google";
 import AdminForm from "../components/AdminForm";
 
 function Admin() {
-  // const [user, setUser] = useState(null);
-
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-
-  //   if (token) {
-  //     const decoded = jwtDecode(token);
-  //     setUser(decoded);
-  //   }
-  // }, []);
-
   const [user, setUser] = useState(() => {
     const token = localStorage.getItem("token");
     return token ? jwtDecode(token) : null;

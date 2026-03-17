@@ -2,21 +2,27 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
+import Loader from "./Loader";
 
 function ProjectsSection() {
+  const [loading, setLoading] = useState(true);
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/api/projects")
       .then((res) => res.json())
-      .then((data) => setProjects(data));
+      .then((data) => {
+        setProjects(data);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) return <Loader />;
 
   return (
     <section className="bg-slate-950 text-white py-20">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-16">Projects</h2>
-
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
             <motion.div
@@ -30,7 +36,7 @@ hover:shadow-[0_0_30px_rgba(56,189,248,0.6)]"
             >
               <div className="overflow-hidden">
                 <img
-                  src={project.image}
+                  src={`http://localhost:5000${project.image}`}
                   alt={project.title}
                   className="w-full h-48 object-cover transition duration-500 hover:scale-110"
                 />

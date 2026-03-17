@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import pool from "./config/neonSql.js";
 import connectMongo from "./config/mongo.js";
 import Project from "./models/Project.js";
+import jwt from "jsonwebtoken";
+import upload from "./config/upload.js";
 
 connectMongo();
 
@@ -11,8 +13,12 @@ dotenv.config();
 
 const app = express();
 
+app.use("/uploads", express.static("uploads"));
+
 app.use(cors());
 app.use(express.json());
+
+app.use("/uploads", express.static("uploads"));
 
 app.get("/", (req, res) => {
   res.send("Portfolio API running");
@@ -39,12 +45,61 @@ app.get("/api/projects", async (req, res) => {
   res.json(projects);
 });
 
-app.post("/api/projects", async (req, res) => {
-  const project = new Project(req.body);
+const verifyToken = (req, res, next) => {
+  const token = req.headers.authorization;
 
-  await project.save();
+  if (!token) {
+    return res.status(403).json({ message: "Access denied" });
+  }
 
-  res.json(project);
+  try {
+    const decoded = jwt.verify(token.split(" ")[1], process.env.JWT_SECRET);
+
+    req.user = decoded;
+
+    next();
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token" });
+  }
+};
+
+app.post(
+  "/api/projects",
+  verifyToken,
+  upload.single("image"),
+  async (req, res) => {
+    const { title, description, tech, github, demo } = req.body;
+
+    const project = new Project({
+      title,
+      description,
+      tech: tech.split(","),
+      github,
+      demo,
+      image: `/uploads/${req.file.filename}`,
+    });
+
+    await project.save();
+
+    res.json(project);
+  },
+);
+
+app.post("/api/admin/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  if (
+    email !== process.env.ADMIN_EMAIL ||
+    password !== process.env.ADMIN_PASSWORD
+  ) {
+    return res.status(401).json({ message: "Invalid credentials" });
+  }
+
+  const token = jwt.sign({ email }, process.env.JWT_SECRET, {
+    expiresIn: "1h",
+  });
+
+  res.json({ token });
 });
 
 app.listen(5000, () => {

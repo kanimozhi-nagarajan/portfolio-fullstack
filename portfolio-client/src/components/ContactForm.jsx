@@ -2,11 +2,12 @@ import { useState } from "react";
 import { API_URL } from "../config/api";
 
 function ContactForm() {
-  const [formData, setFormData] = useState({
+  const initialState = {
     name: "",
     email: "",
     message: "",
-  });
+  };
+  const [formData, setFormData] = useState(initialState);
 
   const handleChange = (e) => {
     setFormData({
@@ -28,6 +29,7 @@ function ContactForm() {
 
     if (res.ok) {
       alert("Message sent successfully!");
+      setFormData(initialState);
     }
   };
 

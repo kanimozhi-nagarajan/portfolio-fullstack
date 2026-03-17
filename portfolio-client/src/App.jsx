@@ -7,7 +7,6 @@ import Skills from "./pages/Skills";
 import Journey from "./pages/Journey";
 import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
-import AdminLogin from "./pages/AdminLogin";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
           <Route path="/journey" element={<Journey />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/admin-login" element={<AdminLogin />} />
           <Route
             path="/admin"
             element={

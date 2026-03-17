@@ -9,24 +9,19 @@ function Navbar() {
           <Link className="hover:text-sky-400 transition" to="/">
             Home
           </Link>
-          <Link className="hover:text-sky-400 transition" to="/about">
-            {" "}
+          {/* <Link className="hover:text-sky-400 transition" to="/about">
             About
-          </Link>
+          </Link> */}
           <Link className="hover:text-sky-400 transition" to="/projects">
-            {" "}
             Projects
           </Link>
           <Link className="hover:text-sky-400 transition" to="/skills">
-            {" "}
             Skills
           </Link>
           <Link className="hover:text-sky-400 transition" to="/journey">
-            {" "}
             Journey
           </Link>
           <Link className="hover:text-sky-400 transition" to="/contact">
-            {" "}
             Contact
           </Link>
           <Link to="/admin" className="hover:text-sky-400 transition">

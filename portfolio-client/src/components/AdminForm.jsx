@@ -1,20 +1,25 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { API_URL } from "../config/api";
 
 function AdminForm() {
-  const [project, setProject] = useState({
+  const fileRef = useRef();
+
+  const initialState = {
     title: "",
     description: "",
     tech: "",
     github: "",
     demo: "",
     image: "",
-  });
+  };
+  const [project, setProject] = useState(initialState);
 
   const handleChange = (e) => {
+    const { name, value, files } = e.target;
+
     setProject({
       ...project,
-      [e.target.name]: e.target.value,
+      [name]: files ? files[0] : value,
     });
   };
 
@@ -32,7 +37,7 @@ function AdminForm() {
 
     const token = localStorage.getItem("token");
 
-    await fetch(`${API_URL}/api/projects`, {
+    const res = await fetch(`${API_URL}/api/projects`, {
       method: "POST",
 
       headers: {
@@ -41,6 +46,15 @@ function AdminForm() {
 
       body: formData,
     });
+
+    if (res.ok) {
+      alert("Project added successfully!");
+      setProject(initialState);
+
+      if (fileRef.current) {
+        fileRef.current.value = "";
+      }
+    }
   };
 
   return (
@@ -55,6 +69,7 @@ function AdminForm() {
           <input
             type="text"
             name="title"
+            value={project.title}
             placeholder="Project Title"
             onChange={handleChange}
             required
@@ -64,6 +79,7 @@ function AdminForm() {
           <textarea
             name="description"
             placeholder="Project Description"
+            value={project.description}
             onChange={handleChange}
             required
             className="w-full p-3 rounded bg-slate-800"
@@ -72,6 +88,7 @@ function AdminForm() {
           <input
             type="text"
             name="tech"
+            value={project.tech}
             placeholder="Tech stack (comma separated)"
             onChange={handleChange}
             className="w-full p-3 rounded bg-slate-800"
@@ -80,6 +97,7 @@ function AdminForm() {
           <input
             type="text"
             name="github"
+            value={project.github}
             placeholder="GitHub link"
             onChange={handleChange}
             className="w-full p-3 rounded bg-slate-800"
@@ -88,6 +106,7 @@ function AdminForm() {
           <input
             type="text"
             name="demo"
+            value={project.demo}
             placeholder="Live demo link"
             onChange={handleChange}
             className="w-full p-3 rounded bg-slate-800"
@@ -95,6 +114,7 @@ function AdminForm() {
           <input
             type="file"
             name="image"
+            ref={fileRef}
             onChange={(e) =>
               setProject({ ...project, image: e.target.files[0] })
             }

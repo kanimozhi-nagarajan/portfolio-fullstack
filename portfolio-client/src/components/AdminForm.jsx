@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_URL } from "../config/api";
 
 function AdminForm() {
   const [project, setProject] = useState({
@@ -31,7 +32,7 @@ function AdminForm() {
 
     const token = localStorage.getItem("token");
 
-    await fetch("http://localhost:5000/api/projects", {
+    await fetch(`${API_URL}/api/projects`, {
       method: "POST",
 
       headers: {
@@ -41,39 +42,6 @@ function AdminForm() {
       body: formData,
     });
   };
-
-  // const handleSubmit1 = async (e) => {
-  //   e.preventDefault();
-
-  //   const formattedProject = {
-  //     ...project,
-  //     tech: project.tech.split(","),
-  //   };
-
-  //   // const res = await fetch("http://localhost:5000/api/projects", {
-  //   //   method: "POST",
-  //   //   headers: {
-  //   //     "Content-Type": "application/json",
-  //   //   },
-  //   //   body: JSON.stringify(formattedProject),
-  //   // });
-  //   const token = localStorage.getItem("token");
-
-  //   const res = await fetch("http://localhost:5000/api/projects", {
-  //     method: "POST",
-
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${token}`,
-  //     },
-
-  //     body: JSON.stringify(formattedProject),
-  //   });
-
-  //   if (res.ok) {
-  //     alert("Project added successfully!");
-  //   }
-  // };
 
   return (
     <section className="py-20">

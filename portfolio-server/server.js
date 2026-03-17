@@ -89,23 +89,6 @@ app.post(
   },
 );
 
-app.post("/api/admin/login", async (req, res) => {
-  const { email, password } = req.body;
-
-  if (
-    email !== process.env.ADMIN_EMAIL ||
-    password !== process.env.ADMIN_PASSWORD
-  ) {
-    return res.status(401).json({ message: "Invalid credentials" });
-  }
-
-  const token = jwt.sign({ email }, process.env.JWT_SECRET, {
-    expiresIn: "1h",
-  });
-
-  res.json({ token });
-});
-
 app.post("/api/auth/google", async (req, res) => {
   const { credential } = req.body;
 
@@ -139,6 +122,6 @@ app.post("/api/auth/google", async (req, res) => {
   res.json({ token });
 });
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+app.listen(process.env.PORT, () => {
+  console.log(`Server running on port ${process.env.PORT}`);
 });

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import { GoogleLogin } from "@react-oauth/google";
 import AdminForm from "../components/AdminForm";
+import { API_URL } from "../config/api";
 
 function Admin() {
   const [user, setUser] = useState(() => {
@@ -10,7 +11,7 @@ function Admin() {
   });
 
   const handleLogin = async (credentialResponse) => {
-    const res = await fetch("http://localhost:5000/api/auth/google", {
+    const res = await fetch(`${API_URL}/api/auth/google`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

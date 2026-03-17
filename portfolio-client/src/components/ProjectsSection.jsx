@@ -3,13 +3,14 @@ import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import Loader from "./Loader";
+import { API_URL } from "../config/api";
 
 function ProjectsSection() {
   const [loading, setLoading] = useState(true);
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/projects")
+    fetch(`${API_URL}/api/projects`)
       .then((res) => res.json())
       .then((data) => {
         setProjects(data);
@@ -36,7 +37,7 @@ hover:shadow-[0_0_30px_rgba(56,189,248,0.6)]"
             >
               <div className="overflow-hidden">
                 <img
-                  src={`http://localhost:5000${project.image}`}
+                  src={`${API_URL}${project.image}`}
                   alt={project.title}
                   className="w-full h-48 object-cover transition duration-500 hover:scale-110"
                 />

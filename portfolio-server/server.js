@@ -4,8 +4,12 @@ import dotenv from "dotenv";
 import pool from "./config/neonSql.js";
 import connectMongo from "./config/mongo.js";
 import Project from "./models/Project.js";
+import User from "./models/User.js";
 import jwt from "jsonwebtoken";
 import upload from "./config/upload.js";
+import { OAuth2Client } from "google-auth-library";
+
+const client = new OAuth2Client();
 
 connectMongo();
 
@@ -98,6 +102,39 @@ app.post("/api/admin/login", async (req, res) => {
   const token = jwt.sign({ email }, process.env.JWT_SECRET, {
     expiresIn: "1h",
   });
+
+  res.json({ token });
+});
+
+app.post("/api/auth/google", async (req, res) => {
+  const { credential } = req.body;
+
+  const ticket = await client.verifyIdToken({
+    idToken: credential,
+    audience: process.env.CLIENT_ID,
+  });
+
+  const payload = ticket.getPayload();
+
+  const email = payload.email;
+  const name = payload.name;
+
+  let user = await User.findOne({ email });
+
+  if (!user) {
+    user = new User({
+      name,
+      email,
+      role: email === process.env.ADMIN_EMAIL ? "admin" : "user",
+    });
+
+    await user.save();
+  }
+
+  const token = jwt.sign(
+    { email: user.email, role: user.role },
+    process.env.JWT_SECRET,
+  );
 
   res.json({ token });
 });

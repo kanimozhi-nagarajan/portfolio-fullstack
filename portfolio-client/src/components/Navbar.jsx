@@ -29,6 +29,9 @@ function Navbar() {
             {" "}
             Contact
           </Link>
+          <Link to="/admin" className="hover:text-sky-400 transition">
+            Admin
+          </Link>
         </div>
       </div>
     </nav>

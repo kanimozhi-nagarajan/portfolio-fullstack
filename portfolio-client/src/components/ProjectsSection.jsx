@@ -37,7 +37,7 @@ hover:shadow-[0_0_30px_rgba(56,189,248,0.6)]"
             >
               <div className="overflow-hidden">
                 <img
-                  src={`${API_URL}${project.image}`}
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-48 object-cover transition duration-500 hover:scale-110"
                 />

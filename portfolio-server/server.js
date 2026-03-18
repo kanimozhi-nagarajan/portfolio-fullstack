@@ -17,7 +17,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://portfolio-fullstack-sigma-one.vercel.app/",
+      "https://portfolio-fullstack-sigma-one.vercel.app",
     ],
 
     credentials: true,

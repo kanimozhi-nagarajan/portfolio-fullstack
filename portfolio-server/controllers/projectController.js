@@ -9,27 +9,6 @@ const getProjects = async (req, res) => {
   }
 };
 
-// const createProject = async (req, res) => {
-//   try {
-//     const { title, description, tech, github, demo } = req.body;
-
-//     const project = new Project({
-//       title,
-//       description,
-//       tech: tech.split(","),
-//       github,
-//       demo,
-//       image: `/uploads/${req.file.filename}`,
-//     });
-
-//     await project.save();
-
-//     res.json(project);
-//   } catch (error) {
-//     res.status(500).json({ error: "Server error" });
-//   }
-// };
-
 const createProject = async (req, res) => {
   try {
     const { title, description, tech, github, demo } = req.body;

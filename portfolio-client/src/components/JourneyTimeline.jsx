@@ -2,8 +2,8 @@ import { journeyData } from "../constants/journeyData";
 import { motion } from "framer-motion";
 function JourneyTimeline() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-20">
-      <h2 className="text-4xl font-bold text-center text-white mb-20">
+    <div className="max-w-5xl mx-auto px-6 py-1">
+      <h2 className="text-4xl font-bold text-center text-white mb-10">
         My Journey
       </h2>
 

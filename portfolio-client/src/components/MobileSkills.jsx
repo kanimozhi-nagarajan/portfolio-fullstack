@@ -6,7 +6,7 @@ function MobileSkills() {
   return (
     <section id="skills" className="text-white py-10 px-4">
       <h2 className="text-4xl font-bold text-center mb-12 text-green-400 font-mono">
-        &gt; <TypingText text="Let's Connect" />
+        &gt; <TypingText text="Other Skills" />
       </h2>
 
       <div className="space-y-6">

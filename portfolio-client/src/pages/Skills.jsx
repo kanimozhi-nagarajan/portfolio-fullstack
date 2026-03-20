@@ -2,9 +2,11 @@ import SkillsSection from "../components/SkillsSection";
 
 function Skills() {
   return (
-    <div>
-      <SkillsSection />
-    </div>
+    <section id="skills" className="pt-20 min-h-screen">
+      <div>
+        <SkillsSection />
+      </div>
+    </section>
   );
 }
 

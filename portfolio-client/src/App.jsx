@@ -7,7 +7,6 @@ import Skills from "./pages/Skills";
 import Journey from "./pages/Journey";
 import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
-import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -15,21 +14,23 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/journey" element={<Journey />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/admin" element={<Admin />} />
+          {/* Main Portfolio Page */}
           <Route
-            path="/admin"
+            path="/"
             element={
-              <ProtectedRoute>
-                <Admin />
-              </ProtectedRoute>
+              <>
+                <Home />
+                {/* <About /> */}
+                <Projects />
+                <Skills />
+                <Journey />
+                <Contact />
+              </>
             }
           />
+
+          {/* Admin stays separate */}
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </BrowserRouter>
     </div>

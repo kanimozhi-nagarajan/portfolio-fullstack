@@ -2,9 +2,11 @@ import ProjectsSection from "../components/ProjectsSection";
 
 function Projects() {
   return (
-    <div>
-      <ProjectsSection />
-    </div>
+    <section id="projects" className="pt-20 min-h-screen">
+      <div>
+        <ProjectsSection />
+      </div>
+    </section>
   );
 }
 

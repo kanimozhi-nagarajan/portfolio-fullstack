@@ -1,11 +1,38 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const scrollToSection = (id) => {
+    // If NOT on home page
+    if (location.pathname !== "/") {
+      navigate("/");
+
+      // wait for page to render
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      // Already on home page
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    setIsOpen(false);
+  };
+
   return (
-    <nav className="bg-slate-900 text-white shadow-md">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-slate-900 text-white">
       <div className="max-w-6xl mx-auto flex items-center p-4">
         {/* Hamburger Button (LEFT) */}
         <button
@@ -17,24 +44,36 @@ function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
-          <Link className="hover:text-sky-400 transition" to="/">
+          <button
+            className="hover:text-sky-400 transition"
+            onClick={() => scrollToSection("home")}
+          >
             Home
-          </Link>
-          {/* <Link className="hover:text-sky-400 transition" to="/about">
-            About
-          </Link> */}
-          <Link className="hover:text-sky-400 transition" to="/projects">
+          </button>
+          <button
+            className="hover:text-sky-400 transition"
+            onClick={() => scrollToSection("projects")}
+          >
             Projects
-          </Link>
-          <Link className="hover:text-sky-400 transition" to="/skills">
+          </button>
+          <button
+            className="hover:text-sky-400 transition"
+            onClick={() => scrollToSection("skills")}
+          >
             Skills
-          </Link>
-          <Link className="hover:text-sky-400 transition" to="/journey">
+          </button>
+          <button
+            className="hover:text-sky-400 transition"
+            onClick={() => scrollToSection("journey")}
+          >
             Journey
-          </Link>
-          <Link className="hover:text-sky-400 transition" to="/contact">
+          </button>
+          <button
+            className="hover:text-sky-400 transition"
+            onClick={() => scrollToSection("contact")}
+          >
             Contact
-          </Link>
+          </button>
           <Link className="hover:text-sky-400 transition" to="/admin">
             Admin
           </Link>
@@ -44,21 +83,11 @@ function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden flex flex-col items-start gap-4 pl-6 pb-4">
-          <Link onClick={() => setIsOpen(false)} to="/">
-            Home
-          </Link>
-          <Link onClick={() => setIsOpen(false)} to="/projects">
-            Projects
-          </Link>
-          <Link onClick={() => setIsOpen(false)} to="/skills">
-            Skills
-          </Link>
-          <Link onClick={() => setIsOpen(false)} to="/journey">
-            Journey
-          </Link>
-          <Link onClick={() => setIsOpen(false)} to="/contact">
-            Contact
-          </Link>
+          <button onClick={() => scrollToSection("home")}>Home</button>
+          <button onClick={() => scrollToSection("projects")}>Projects</button>
+          <button onClick={() => scrollToSection("skills")}>Skills</button>
+          <button onClick={() => scrollToSection("journey")}>Journey</button>
+          <button onClick={() => scrollToSection("contact")}>Contact</button>
           <Link onClick={() => setIsOpen(false)} to="/admin">
             Admin
           </Link>

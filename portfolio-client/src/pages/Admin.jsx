@@ -38,7 +38,7 @@ function Admin() {
   // Not logged in → show Google login
   if (!user) {
     return (
-      <div className="bg-slate-950 min-h-screen flex flex-col items-center justify-center text-white">
+      <div className="bg-[#0f172a]   min-h-screen flex flex-col items-center justify-center text-white">
         <h2 className="mb-6 text-xl">Admin Login</h2>
 
         <GoogleLogin onSuccess={handleLogin} />
@@ -49,7 +49,7 @@ function Admin() {
   // Logged in but NOT admin
   if (user.role !== "admin") {
     return (
-      <div className="bg-slate-950 min-h-screen flex flex-col items-center justify-center text-white">
+      <div className="bg-[#0f172a]   min-h-screen flex flex-col items-center justify-center text-white">
         <motion.div
           className="absolute w-72 h-72 bg-red-500/10 rounded-full blur-3xl pointer-events-none z-0"
           animate={{ y: [0, -20, 0] }}
@@ -85,7 +85,7 @@ function Admin() {
 
   // Admin view
   return (
-    <div className="bg-slate-950 min-h-screen text-white">
+    <div className="bg-[#0f172a]   min-h-screen text-white">
       <div className="flex justify-end p-6 pt-20">
         <button onClick={logout} className="bg-red-500 px-4 py-2 rounded">
           Logout

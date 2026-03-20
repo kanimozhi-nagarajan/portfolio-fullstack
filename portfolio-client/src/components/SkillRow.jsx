@@ -47,7 +47,7 @@ function SkillRow({ group, index, scrollY, springX, springY }) {
               }}
               transition={{ type: "spring", stiffness: 200 }}
               className="min-w-[160px] md:min-w-[200px]
-              bg-slate-900/70 backdrop-blur-md
+              bg-slate-900/70 
               px-4 py-3 rounded-xl
               border border-sky-500/20
               flex items-center gap-3 justify-center
@@ -65,8 +65,8 @@ function SkillRow({ group, index, scrollY, springX, springY }) {
         </motion.div>
 
         {/* Edge fades */}
-        <div className="absolute top-0 left-0 h-full w-24 bg-gradient-to-r from-black via-black/80 to-transparent z-10" />
-        <div className="absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-black via-black/80 to-transparent z-10" />
+        <div className="absolute top-0 left-0 h-full w-24 bg-gradient-to-r from-cyan-900 via-cyan/80 to-transparent z-5" />
+        <div className="absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-cyan-900 via-cyan/80 to-transparent z-5" />
       </div>
     </motion.div>
   );

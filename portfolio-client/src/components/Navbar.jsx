@@ -32,7 +32,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-slate-900 text-white">
+    <nav className="bg-[#020617] border-b border-slate-800 fixed top-0 left-0 w-full z-50 text-white">
       <div className="max-w-6xl mx-auto flex items-center p-4">
         {/* Hamburger Button (LEFT) */}
         <button

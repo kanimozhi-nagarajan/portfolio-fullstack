@@ -29,12 +29,6 @@ function DesktopSkills() {
       id="skills"
       className="relative text-white min-h-[calc(100vh-80px)] flex items-center py-6 overflow-hidden"
     >
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#0ea5e9_1px,transparent_1px),linear-gradient(to_bottom,#0ea5e9_1px,transparent_1px)] bg-[size:40px_40px]" />
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-purple-500/10 blur-2xl" />
-      </div>
-
       <div className="w-full max-w-7xl mx-auto px-4 relative">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
           Skills

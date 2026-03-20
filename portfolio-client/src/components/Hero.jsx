@@ -11,6 +11,12 @@ function Hero() {
         {/* Text Section */}
 
         <div className="order-2 md:order-1">
+          <span className="cursor">
+            <p className="text-green-400 font-mono mb-4">
+              &gt; npm start portfolio
+            </p>
+          </span>
+
           <motion.h1
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}

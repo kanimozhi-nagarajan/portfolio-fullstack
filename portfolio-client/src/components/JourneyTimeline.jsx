@@ -30,10 +30,9 @@ function JourneyTimeline() {
               {/* Card */}
 
               <div
-                className="w-full md:w-5/12 bg-slate-900 p-6 rounded-xl border border-sky-500 
-shadow-lg transition-all duration-300 transform 
- md:hover:scale-110 hover:-translate-y-2
-hover:shadow-[0_0_30px_rgba(56,189,248,0.6)] cursor-pointer space-y-16 max-w-4xl  "
+                className="bg-[#020617] p-6 rounded-xl border border-sky-400
+shadow-lg transition transform hover:scale-110
+hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">{item.icon}</span>
@@ -42,10 +41,22 @@ hover:shadow-[0_0_30px_rgba(56,189,248,0.6)] cursor-pointer space-y-16 max-w-4xl
                     {item.title}
                   </h3>
                 </div>
-
+                {/* 
                 <p className="text-gray-300 mt-3 leading-relaxed">
                   {item.description}
-                </p>
+                </p> */}
+                <div className="bg-[#020617] border border-slate-700 rounded-lg p-4 mt-4 text-sm font-mono">
+                  <pre className="whitespace-pre-wrap leading-relaxed break-words">
+                    <span className="text-sky-400">const</span>{" "}
+                    <span className="text-yellow-400">journeyStep</span> = {"{"}
+                    {"\n  "}
+                    <span className="text-green-400">phase</span>: "{item.title}
+                    ",
+                    {"\n  "}
+                    <span className="text-green-400">description</span>: "
+                    {item.description}"{"\n}"}
+                  </pre>
+                </div>
               </div>
             </motion.div>
           );

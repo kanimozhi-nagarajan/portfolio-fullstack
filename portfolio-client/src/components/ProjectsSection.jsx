@@ -31,9 +31,9 @@ function ProjectsSection() {
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-slate-900 rounded-xl overflow-hidden border border-sky-500
+              className="bg-[#020617] rounded-xl overflow-hidden border border-sky-400
 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105
-hover:shadow-[0_0_30px_rgba(56,189,248,0.6)]"
+hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]"
             >
               <div className="overflow-hidden">
                 <img

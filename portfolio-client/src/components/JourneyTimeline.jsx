@@ -36,15 +36,7 @@ hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">{item.icon}</span>
-
-                  <h3 className="text-xl md:text-2xl break-words font-semibold text-sky-400">
-                    {item.title}
-                  </h3>
                 </div>
-                {/* 
-                <p className="text-gray-300 mt-3 leading-relaxed">
-                  {item.description}
-                </p> */}
                 <div className="bg-[#020617] border border-slate-700 rounded-lg p-4 mt-4 text-sm font-mono">
                   <pre className="whitespace-pre-wrap leading-relaxed break-words">
                     <span className="text-sky-400">const</span>{" "}

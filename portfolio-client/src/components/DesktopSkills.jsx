@@ -2,6 +2,7 @@ import { motion, useScroll, useMotionValue, useSpring } from "framer-motion";
 import { useRef } from "react";
 import { skillsData } from "../constants/skillsData";
 import SkillRow from "./SkillRow";
+import TypingText from "./TypingText";
 
 function DesktopSkills() {
   const ref = useRef(null);
@@ -30,8 +31,8 @@ function DesktopSkills() {
       className="relative text-white min-h-[calc(100vh-80px)] flex items-center py-6 overflow-hidden"
     >
       <div className="w-full max-w-7xl mx-auto px-4 relative">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-          Skills
+        <h2 className="text-4xl font-bold text-center mb-12 text-green-400 font-mono">
+          &gt; <TypingText text="Other Skills" />
         </h2>
 
         <div className="space-y-6">

@@ -1,10 +1,11 @@
 import { journeyData } from "../constants/journeyData";
 import { motion } from "framer-motion";
+import TypingText from "./TypingText";
 function JourneyTimeline() {
   return (
     <div className="max-w-5xl mx-auto px-6 py-1">
-      <h2 className="text-4xl font-bold text-center text-white mb-10">
-        My Journey
+      <h2 className="text-4xl font-bold text-center mb-12 text-green-400 font-mono">
+        &gt; <TypingText text="My Journey" />
       </h2>
 
       <div className="relative">

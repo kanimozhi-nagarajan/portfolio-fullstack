@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { API_URL } from "../config/api";
+import TypingText from "./TypingText";
 
 function ContactForm() {
   const initialState = {
@@ -36,8 +37,9 @@ function ContactForm() {
   return (
     <section className=" text-white py-1">
       <div className="max-w-3xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-12">Let's Connect</h2>
-
+        <h2 className="text-4xl font-bold text-center mb-12 text-green-400 font-mono">
+          &gt; <TypingText text="Let's Connect" />
+        </h2>
         <form
           onSubmit={handleSubmit}
           className="bg-slate-900 p-8 rounded-xl border border-sky-500 space-y-6"

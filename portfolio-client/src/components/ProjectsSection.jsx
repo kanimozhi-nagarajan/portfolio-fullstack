@@ -4,6 +4,7 @@ import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import Loader from "./Loader";
 import { API_URL } from "../config/api";
+import TypingText from "./TypingText";
 
 function ProjectsSection() {
   const [loading, setLoading] = useState(true);
@@ -23,7 +24,9 @@ function ProjectsSection() {
   return (
     <section className=" text-white py-1">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-16">Projects</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-green-400 font-mono">
+          &gt; <TypingText text="My work" />
+        </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
             <motion.div

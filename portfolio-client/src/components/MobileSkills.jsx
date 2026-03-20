@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { skillsData } from "../constants/skillsData";
+import TypingText from "./TypingText";
 
 function MobileSkills() {
   return (
     <section id="skills" className="text-white py-10 px-4">
-      <h2 className="text-2xl font-bold text-center mb-6">Skills</h2>
+      <h2 className="text-4xl font-bold text-center mb-12 text-green-400 font-mono">
+        &gt; <TypingText text="Let's Connect" />
+      </h2>
 
       <div className="space-y-6">
         {skillsData.map((group, index) => (

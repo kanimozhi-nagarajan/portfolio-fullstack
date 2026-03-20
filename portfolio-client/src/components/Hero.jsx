@@ -6,16 +6,16 @@ import { MdDownload } from "react-icons/md";
 
 function Hero() {
   return (
-    <section className=" text-white py-1">
-      <div className="max-w-6xl mx-auto px-6 py-6 grid md:grid-cols-2 gap-10 items-center ">
+    <section className="text-white py-4 md:py-1">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 md:py-6 grid md:grid-cols-2 gap-6 md:gap-10 items-center">
         {/* Text Section */}
 
-        <div>
+        <div className="order-2 md:order-1">
           <motion.h1
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="text-4xl md:text-6xl font-bold"
+            transition={{ duration: 0.6 }}
+            className="text-3xl sm:text-4xl md:text-6xl font-bold"
           >
             Hello, I'm Kanimozhi
           </motion.h1>
@@ -23,8 +23,8 @@ function Hero() {
           <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
-            className="text-2xl text-sky-400 mt-4"
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="text-lg sm:text-xl md:text-2xl text-sky-400 mt-2 md:mt-4"
           >
             Full Stack Developer
           </motion.h2>
@@ -32,8 +32,8 @@ function Hero() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 2, duration: 1, ease: "easeOut" }}
-            className="mt-6 max-w-xl text-lg text-gray-300 leading-relaxed"
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="mt-3 md:mt-6 max-w-xl text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed"
           >
             I began my professional journey as an educator where I developed
             strong communication, mentoring, and problem-solving skills. Over
@@ -44,26 +44,26 @@ function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 3, duration: 0.8, ease: "easeOut" }}
-            className="mt-8 flex flex-wrap gap-4"
+            transition={{ delay: 0.8, duration: 0.5 }}
+            className="mt-4 md:mt-8 flex flex-wrap gap-3"
           >
             <a
               href="/KANIMOZHI_NAGARAJAN_MERN_STACK_DEVELOPER_RESUME.pdf"
               download
-              className="inline-block bg-sky-500 px-6 py-3 rounded-lg hover:bg-sky-600 transition font-semibold"
+              className="inline-block bg-sky-500 px-6 py-3 md:px-6 md:py-3 rounded-lg hover:bg-sky-600 transition font-semibold"
             >
               RESUME
             </a>
             <a
               href="#projects"
-              className="bg-sky-500 hover:bg-sky-600 px-6 py-3 rounded-lg font-semibold transition"
+              className="bg-sky-500 hover:bg-sky-600 px-6 py-3 md:px-6 md:py-3 rounded-lg font-semibold transition"
             >
               View Projects
             </a>
 
             <a
               href="#contact"
-              className="border border-sky-400 px-6 py-3 rounded-lg hover:bg-sky-500 hover:text-white transition"
+              className="border border-sky-400 px-6 py-3 md:px-6 md:py-3 rounded-lg hover:bg-sky-500 hover:text-white transition"
             >
               Message Me
             </a>
@@ -71,7 +71,7 @@ function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 4, duration: 0.8, ease: "easeOut" }}
+            transition={{ delay: 1, duration: 0.5 }}
             className="mt-8 flex flex-wrap gap-4"
           >
             {/* <div className="flex gap-6 mt-6 "> */}
@@ -96,11 +96,11 @@ function Hero() {
 
         {/* Profile Image */}
 
-        <div className="flex justify-center">
+        <div className="flex justify-center order-1 md:order-2">
           <motion.img
             src={profile}
             alt="Profile"
-            className="w-64 h-64 object-cover rounded-full border-4 border-sky-400 shadow-[0_0_40px_rgba(56,189,248,0.6)]"
+            className="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 object-cover rounded-full border-4 border-sky-400 shadow-[0_0_40px_rgba(56,189,248,0.6)]"
             animate={{ y: [0, -15, 0] }}
             transition={{
               duration: 4,

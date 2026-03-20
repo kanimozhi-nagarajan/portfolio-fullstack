@@ -87,7 +87,7 @@ function Navbar() {
           <button onClick={() => scrollToSection("projects")}>Projects</button>
           <button onClick={() => scrollToSection("skills")}>Skills</button>
           <button onClick={() => scrollToSection("journey")}>Journey</button>
-          <button onClick={() => scrollToSection("contact")}>Contact</button>
+          <button onClick={() => scrollToSection("contact")}>Message Me</button>
           <Link onClick={() => setIsOpen(false)} to="/admin">
             Admin
           </Link>

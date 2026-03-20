@@ -72,7 +72,7 @@ function Navbar() {
             className="hover:text-sky-400 transition"
             onClick={() => scrollToSection("contact")}
           >
-            Message Me
+            Connect
           </button>
           <Link className="hover:text-sky-400 transition" to="/admin">
             Admin
@@ -87,7 +87,7 @@ function Navbar() {
           <button onClick={() => scrollToSection("projects")}>Projects</button>
           <button onClick={() => scrollToSection("skills")}>Skills</button>
           <button onClick={() => scrollToSection("journey")}>Journey</button>
-          <button onClick={() => scrollToSection("contact")}>Message Me</button>
+          <button onClick={() => scrollToSection("contact")}>Connect</button>
           <Link onClick={() => setIsOpen(false)} to="/admin">
             Admin
           </Link>

@@ -36,7 +36,7 @@ function ContactForm() {
   return (
     <section className=" text-white py-1">
       <div className="max-w-3xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-12">Message Me</h2>
+        <h2 className="text-4xl font-bold text-center mb-12">Let's Connect</h2>
 
         <form
           onSubmit={handleSubmit}

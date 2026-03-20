@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const location = useLocation();
   const navigate = useNavigate();
 
   const scrollToSection = (id) => {
@@ -72,7 +71,7 @@ function Navbar() {
             className="hover:text-sky-400 transition"
             onClick={() => scrollToSection("contact")}
           >
-            Contact
+            Message Me
           </button>
           <Link className="hover:text-sky-400 transition" to="/admin">
             Admin

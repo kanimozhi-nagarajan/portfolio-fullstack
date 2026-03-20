@@ -56,7 +56,7 @@ function Hero() {
               to="/contact"
               className="border border-sky-400 px-6 py-3 rounded-lg hover:bg-sky-500 hover:text-white transition"
             >
-              Contact Me
+              Message Me
             </Link>
           </motion.div>
         </div>

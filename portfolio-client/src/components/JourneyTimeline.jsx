@@ -33,7 +33,7 @@ function JourneyTimeline() {
                 className="w-full md:w-5/12 bg-slate-900 p-6 rounded-xl border border-sky-500 
 shadow-lg transition-all duration-300 transform 
  md:hover:scale-110 hover:-translate-y-2
-hover:shadow-[0_0_30px_rgba(56,189,248,0.6)] cursor-pointer"
+hover:shadow-[0_0_30px_rgba(56,189,248,0.6)] cursor-pointer space-y-16 max-w-4xl  "
               >
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">{item.icon}</span>

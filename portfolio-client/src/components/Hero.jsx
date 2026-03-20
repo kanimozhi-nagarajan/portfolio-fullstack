@@ -35,10 +35,9 @@ function Hero() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="mt-3 md:mt-6 max-w-xl text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed"
           >
-            I began my professional journey as an educator where I developed
-            strong communication, mentoring, and problem-solving skills. Over
-            time, my curiosity for technology led me into software development
-            where I now build modern full-stack applications.
+            I create web applications. From UI to backend logic. Designed to be
+            simple, functional, and reliable. Driven by curiosity and
+            problem-solving. And always improving along the way.
           </motion.p>
 
           <motion.div
@@ -100,7 +99,7 @@ function Hero() {
           <motion.img
             src={profile}
             alt="Profile"
-            className="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 object-cover rounded-full border-4 border-sky-400 shadow-[0_0_40px_rgba(56,189,248,0.6)]"
+            className="w-40 h-40 sm:w-48 sm:h-48 md:w-94 md:h-94 object-cover rounded-full border-4 border-sky-400 shadow-[0_0_40px_rgba(56,189,248,0.6)]"
             animate={{ y: [0, -15, 0] }}
             transition={{
               duration: 4,

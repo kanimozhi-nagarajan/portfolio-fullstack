@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollToSection = (id) => {
     // If NOT on home page
@@ -31,11 +32,7 @@ function Navbar() {
   };
 
   return (
-    <nav
-      className={`top-0 left-0 w-full z-50 bg-slate-900 text-white ${
-        isOpen ? "relative" : "fixed"
-      }`}
-    >
+    <nav className="fixed top-0 left-0 w-full z-50 bg-slate-900 text-white">
       <div className="max-w-6xl mx-auto flex items-center p-4">
         {/* Hamburger Button (LEFT) */}
         <button
@@ -85,7 +82,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden flex flex-col items-start gap-4 pl-6 pb-4">
+        <div className="md:hidden flex flex-col items-start gap-4 pl-6 pb-4 bg-slate-900 w-full mt-2">
           <button onClick={() => scrollToSection("home")}>Home</button>
           <button onClick={() => scrollToSection("projects")}>Projects</button>
           <button onClick={() => scrollToSection("skills")}>Skills</button>

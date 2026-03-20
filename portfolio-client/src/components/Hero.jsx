@@ -92,20 +92,6 @@ function Hero() {
             </a>
             {/* </div> */}
           </motion.div>
-          {/* <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 5, duration: 0.8, ease: "easeOut" }}
-            className="mt-8 flex flex-wrap gap-4"
-          >
-            <a
-              href="/KANIMOZHI_NAGARAJAN_MERN_STACK_DEVELOPER_RESUME.pdf"
-              download
-              className="inline-block bg-sky-500 px-6 py-3 rounded-lg hover:bg-sky-600 transition font-semibold"
-            >
-              DOWNLOAD RESUME
-            </a>
-          </motion.div> */}
         </div>
 
         {/* Profile Image */}

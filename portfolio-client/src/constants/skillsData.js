@@ -1,4 +1,4 @@
-import { FaReact, FaNodeJs, FaGitAlt, FaJava, FaPython } from "react-icons/fa";
+import { FaGitAlt, FaJava, FaPython, FaDatabase } from "react-icons/fa";
 
 import {
   SiTypescript,
@@ -8,6 +8,7 @@ import {
   SiSwagger,
   SiJira,
   SiJupyter,
+  SiMysql,
 } from "react-icons/si";
 
 export const skillsData = [
@@ -20,7 +21,13 @@ export const skillsData = [
       { name: "Python", icon: FaPython },
     ],
   },
-
+  {
+    category: "Database",
+    skills: [
+      { name: "MySql", icon: SiMysql },
+      { name: "MSSQL", icon: FaDatabase },
+    ],
+  },
   {
     category: "Testing & API-Docs",
     skills: [

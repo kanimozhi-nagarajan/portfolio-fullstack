@@ -7,7 +7,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
-      <div>
+      <div className="w-full overflow-x-hidden">
         <App />
       </div>
     </GoogleOAuthProvider>

@@ -18,7 +18,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://portfolio-fullstack-sigma-one.vercel.app",
-      "https://www.kanimozhi.org/",
+      "https://www.kanimozhi.org",
     ],
 
     credentials: true,

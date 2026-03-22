@@ -10,7 +10,7 @@ function Loader() {
       <h2 className="bg-[#0f172a]  text-4xl font-bold text-center mb-12 text-green-400 font-mono">
         &gt;{" "}
         <TypingText
-          text="Site may sleep on free hosting — if project is not loading, 
+          text="Site may sleep on free hosting — if project section is not loading from backend, 
         wait for few seconds or try refreshing! Thank you for your patience "
         />
       </h2>

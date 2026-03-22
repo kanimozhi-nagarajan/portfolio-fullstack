@@ -8,11 +8,13 @@ import Journey from "./pages/Journey";
 import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
 import Footer from "./components/Footer";
+import AnalyticsTracker from "./components/AnalyticsTracker";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+        <AnalyticsTracker />
         <Navbar />
         <Routes>
           {/* Main Portfolio Page */}

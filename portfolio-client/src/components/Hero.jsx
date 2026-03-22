@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import profile from "../assets/profile.jpg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { MdDownload } from "react-icons/md";
+import ReactGA from "react-ga4";
 
 function Hero() {
   return (
@@ -54,6 +53,12 @@ function Hero() {
           >
             <a
               href="/KANIMOZHI_NAGARAJAN_PORTFOLIO_RESUME.pdf"
+              onClick={() =>
+                ReactGA.event({
+                  category: "Resume",
+                  action: "Download",
+                })
+              }
               download
               className="inline-block bg-sky-500 px-6 py-3 md:px-6 md:py-3 rounded-lg hover:bg-sky-600 transition font-semibold"
             >
@@ -70,7 +75,7 @@ function Hero() {
               href="#contact"
               className="border border-sky-400 px-6 py-3 md:px-6 md:py-3 rounded-lg hover:bg-sky-500 hover:text-white transition"
             >
-              Message Me
+              Let's Connect
             </a>
           </motion.div>
           <motion.div

@@ -5,6 +5,7 @@ import { FiExternalLink } from "react-icons/fi";
 import Loader from "./Loader";
 import { API_URL } from "../config/api";
 import TypingText from "./TypingText";
+import ReactGA from "react-ga4";
 
 function ProjectsSection() {
   const [loading, setLoading] = useState(true);
@@ -68,6 +69,13 @@ hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]"
 
                 <div className="flex gap-4 mt-6">
                   <a
+                    onClick={() => {
+                      ReactGA.event({
+                        category: "Project",
+                        action: "Clicked GitHub",
+                        label: project.title,
+                      });
+                    }}
                     href={project.github}
                     target="_blank"
                     className="flex items-center gap-2 text-sm bg-sky-500 px-4 py-2 rounded hover:bg-sky-600 transition"
@@ -78,6 +86,13 @@ hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]"
 
                   <a
                     href={project.demo}
+                    onClick={() => {
+                      ReactGA.event({
+                        category: "Project",
+                        action: "Clicked Live Demo",
+                        label: project.title,
+                      });
+                    }}
                     target="_blank"
                     className="flex items-center gap-2 text-sm border border-sky-400 px-4 py-2 rounded hover:bg-sky-500 transition"
                   >

@@ -28,7 +28,7 @@ function DesktopSkills() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       id="skills"
-      className="relative text-white min-h-[calc(100vh-80px)] flex items-center py-6 overflow-hidden"
+      className="relative text-white min-h-[calc(100vh-80px)] flex items-center py-1 overflow-hidden"
     >
       <div className="w-full max-w-7xl mx-auto px-4 relative">
         <h2 className="text-4xl font-bold text-center mb-12 text-green-400 font-mono">

@@ -35,7 +35,7 @@ function ContactForm() {
   };
 
   return (
-    <section className=" text-white py-1">
+    <section className=" text-white ">
       <div className="max-w-3xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-12 text-green-400 font-mono">
           &gt; <TypingText text="Let's Connect" />

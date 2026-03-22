@@ -9,7 +9,7 @@ function Loader() {
     <div>
       <h2 className="text-4xl font-bold text-center mb-12 text-green-400 font-mono">
         &gt;{" "}
-        <TypingText text=" Site may sleep on free hosting — if it’s slow, just refresh 🔄" />
+        <TypingText text="Site may sleep on free hosting — if it’s slow, just refresh 🔄" />
       </h2>
     </div>
     // <div className="text-4xl font-bold text-center mb-12 text-green-400 font-mono">

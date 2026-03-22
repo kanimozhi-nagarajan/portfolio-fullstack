@@ -1,3 +1,5 @@
+import TypingText from "./TypingText";
+
 function Loader() {
   return (
     // <div className="fixed inset-0 flex items-center justify-center bg-[#0f172a]   z-50">

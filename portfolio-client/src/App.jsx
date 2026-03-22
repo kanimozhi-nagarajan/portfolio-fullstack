@@ -7,6 +7,7 @@ import Skills from "./pages/Skills";
 import Journey from "./pages/Journey";
 import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
                 <Skills />
                 <Journey />
                 <Contact />
+                <Footer />
               </>
             }
           />

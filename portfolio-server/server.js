@@ -20,10 +20,12 @@ app.use(
       "https://portfolio-fullstack-sigma-one.vercel.app",
       "https://www.kanimozhi.org",
     ],
-
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   }),
 );
+
+app.options("*", cors());
 app.use(express.json());
 
 app.use("/uploads", express.static("uploads"));

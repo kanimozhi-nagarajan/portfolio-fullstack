@@ -8,15 +8,21 @@ function Loader() {
     //   </p>
     //    </div>
     //    </div>
-    <div>
-      <h2 className="text-4xl font-bold text-center mb-12 text-green-400 font-mono">
-        &gt;{" "}
-        <TypingText
-          text=" Since this site use vercel for free hosting , longtime in activity might
-        make sight unresponsive , please be patient ! Thank you"
-        />
-      </h2>
+    <div className="text-4xl font-bold text-center mb-12 text-green-400 font-mono">
+      <p>
+        Since this site use vercel for free hosting , longtime in activity might
+        make sight unresponsive , please be patient ! Thank you
+      </p>
     </div>
+    // <div>
+    //   <h2 className="text-4xl font-bold text-center mb-12 text-green-400 font-mono">
+    //     &gt;{" "}
+    //     <TypingText
+    //       text=" Since this site use vercel for free hosting , longtime in activity might
+    //     make sight unresponsive , please be patient ! Thank you"
+    //     />
+    //   </h2>
+    // </div>
   );
 }
 

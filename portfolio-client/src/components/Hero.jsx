@@ -53,7 +53,7 @@ function Hero() {
             className="mt-4 md:mt-8 flex flex-wrap gap-3"
           >
             <a
-              href="/KANIMOZHI_NAGARAJAN_MERN_STACK_DEVELOPER_RESUME.pdf"
+              href="/KANIMOZHI_NAGARAJAN_PORTFOLIO_RESUME.pdf"
               download
               className="inline-block bg-sky-500 px-6 py-3 md:px-6 md:py-3 rounded-lg hover:bg-sky-600 transition font-semibold"
             >

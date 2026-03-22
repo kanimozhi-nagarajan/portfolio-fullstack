@@ -6,9 +6,8 @@ function Footer() {
     <footer className="bg-[#020617] border-t border-slate-800 text-white py-10">
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Branding */}
-        {/* <h2 className="text-2xl font-semibold text-sky-400 font-mono"> */}
         <h2 className="text-sky-400 hover:shadow-[0_0_10px_rgba(56,189,248,0.6)]">
-          &gt; Kanimozhi.dev
+          &gt; kanimozhi.org
         </h2>
 
         <p className="text-gray-400 mt-2 text-sm">

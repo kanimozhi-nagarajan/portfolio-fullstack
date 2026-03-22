@@ -9,7 +9,10 @@ function Loader() {
     <div>
       <h2 className="bg-[#0f172a]  text-4xl font-bold text-center mb-12 text-green-400 font-mono">
         &gt;{" "}
-        <TypingText text="Site may sleep on free hosting — if project is not loading, wait for few seconds! Thank you for your patience " />
+        <TypingText
+          text="Site may sleep on free hosting — if project is not loading, 
+        wait for few seconds or try refreshing! Thank you for your patience "
+        />
       </h2>
     </div>
     // <div className="text-4xl font-bold text-center mb-12 text-green-400 font-mono">

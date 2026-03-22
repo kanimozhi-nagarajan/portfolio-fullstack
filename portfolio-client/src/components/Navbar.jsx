@@ -1,12 +1,27 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isOpen]);
 
   const scrollToSection = (id) => {
     // If NOT on home page
